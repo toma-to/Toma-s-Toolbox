@@ -1,6 +1,14 @@
 ﻿# InsertHeader.ps1
 # Copyright 2019 TOMA
 # MIT License
+#
+# ソースファイルのヘッダコメントを一括で挿入するスクリプト
+# TargetFolder - 処理対象のソースファイルが存在するフォルダ
+# TargetExtension - 処理対象ファイルの拡張子（「.」込みで指定）
+# InsertFile - 挿入するコメントを記述したファイル
+# CompareLines - 挿入コメントと対象ファイルの比較行数。
+#                先頭からこの行数分比較を行い、不一致の行がある場合のみ挿入を行う。
+#                (0、未指定の場合は比較不一致なしと判断されるので挿入は行われない）
 
 Param (
     [parameter(mandatory)][string]$TagetFolder,
